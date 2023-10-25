@@ -12,7 +12,9 @@ def encode_password(password):
     print("Your password has been encoded and stored!")
     return stored_password
 
-def decode_password:
+def decode_password():
+    pass
+
 
 
 
@@ -23,7 +25,7 @@ def main():
         try:
             op_choice = int(op_choice)
         except ValueError:
-            op_choice = -1
+            print("Option must be a value 1-3. Try again!")
 
         if op_choice == 0:
             break
@@ -31,9 +33,18 @@ def main():
         elif op_choice == 1:
             password = input("Please enter your password to encode: ")
             encode_password(password)
-            #input a valueerror for password not integar or 8 digits
+            try:
+                op_choice = int(op_choice)
+            except ValueError as error1:
+                print("Password must be number. Try again!")
+            except ValueError as error2:
+
+                print()
 
         elif op_choice == 2:
+            pass
+
+
 
 
 
