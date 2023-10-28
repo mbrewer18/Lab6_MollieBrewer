@@ -1,4 +1,6 @@
-#Mollie Brewer
+#Lab 6
+#Owner: Mollie Brewer
+#Collaborator:
 
 def display_menu():
     print("\n\nMenu")
