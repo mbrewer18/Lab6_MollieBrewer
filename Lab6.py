@@ -13,32 +13,29 @@ def encode_password(password):
     return stored_password
 
 def decode_password(stored_password):
-    for i in range(len(stored_password)):
-        i +=3
-        return i
+    pass
 
 
 
 
 def main():
-    while input != 0:
+    while input != 3:
         display_menu()
         op_choice = input("\nPlease enter an option: ")
         try:
             op_choice = int(op_choice)
+            if op_choice > 3 or op_choice < 1:
+                raise ValueError
+
         except ValueError:
-            print("Option must be a value 1-3. Try again!")
-            #fix this
+            print("Invaild Option. Try again!")
 
-        if op_choice == 0:
-            break
-
-        elif op_choice == 1:
+        if op_choice == 1:
             password = input("Please enter your password to encode: ")
             try:
                 password = int(password)
                 if len(str(password)) != 8:
-                    print("Password must be 8 digits. Try again!")
+                     print("Password must be 8 digits. Try again!")
                 else:
                     encode_password(password)
             except ValueError:
@@ -46,9 +43,11 @@ def main():
 
 
         elif op_choice == 2:
-            pass
+             pass
 
 
+        elif op_choice == 3:    #Exit program if user inputs 3
+            break
 
 
 
