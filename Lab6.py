@@ -11,14 +11,15 @@ def display_menu():
     print("3. Quit")
 
 def encode_password(password):
-    stored_password = str(password)  # Convert passwrd to a string so it can work in my DECODE function
+    stored_password = password  # Convert passwrd to a string so it can work in my DECODE function
+    #changed it back because it needs to be a string in the decode, not encode-should be fixed now
     print("Your password has been encoded and stored!")
     return stored_password
 
 
 def decode_password(password):
     decoded_password = []
-    for i in password:
+    for i in str(password):  #made password a string
         if i == "0":
             decoded_password.append("3")
         elif i == "1":
@@ -78,7 +79,7 @@ def main():
 
         elif op_choice == 2:
             decoded_password = decode_password(password)
-            print(f'The encoded password is {decoded_password} and the original password is {password}')
+            print(f'The encoded password is {decoded_password}, and the original password is {password}.')
 
 
         elif op_choice == 3:  # Exit program if user inputs 3
